@@ -1,0 +1,160 @@
+// 左侧菜单
+.left-menu {
+  background-color: #0157ab;
+  position: relative;
+  z-index: 1;
+  user-select: none;
+  overflow: visible !important;
+  flex-shrink: 0;
+
+  .open-btn {
+    display: none;
+    font-weight: 800;
+    font-size: 2.4rem;
+  }
+
+  .el-menu {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+  }
+
+  .main-menu {
+    background-color: rgba(0, 0, 0, 0);
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    max-height: 100%;
+    position: relative;
+
+    .el-tooltip {
+      outline: none;
+    }
+
+    * {
+      overflow: hidden;
+    }
+
+    .el-submenu {
+      &.is-opened {
+        background-color: #013d77;
+        border-left: 0.4rem solid $--color-primary;
+
+        .is-opened {
+          border-left: none;
+        }
+
+        >.el-submenu__title {
+          .el-submenu__icon-arrow {
+            transform: rotateZ(0deg);
+            opacity: 1;
+          }
+
+          >.el-tooltip {
+            >.icon {
+              color: $--color-white;
+            }
+
+            .txt {
+              color: $--color-white;
+            }
+          }
+        }
+      }
+
+      .el-submenu__title {
+        color: rgba(255, 255, 255, 0.5);
+        height: auto;
+        line-height: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem 0 0;
+
+        &.is-active,
+        &:focus {
+          background-color: rgba(0, 0, 0, 0);
+        }
+
+        &:hover {
+          background-color: #013567;
+        }
+
+        .el-submenu__icon-arrow {
+          color: $--color-white;
+          flex-shrink: 0;
+          position: initial;
+          margin: 0;
+          display: block;
+          width: 1rem;
+          height: 1rem;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: auto;
+          transform: rotateZ(90deg);
+          opacity: 0.5;
+
+          &::before {
+            content: '\e790';
+          }
+        }
+      }
+
+      .el-menu-item-group {
+        .el-menu-item-group__title:empty {
+          display: none;
+        }
+      }
+    }
+
+    .el-menu-item {
+      color: rgba(255, 255, 255, 0.5);
+      height: auto;
+      line-height: 1;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      min-width: auto;
+
+      &.is-active,
+      &:focus {
+        color: $--color-white;
+        background-color: rgba(0, 0, 0, 0);
+
+        .icon {
+          color: $--color-white;
+        }
+      }
+
+      &:hover {
+        background-color: #013567;
+      }
+    }
+
+    .el-tooltip {
+      display: flex;
+      align-items: center;
+    }
+
+    .txt {
+      padding: 1.4rem 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
+      display: block;
+      margin-right: 0.5rem;
+      flex-grow: 100;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .icon {
+      color: rgba(255, 255, 255, 0.5);
+      flex-shrink: 0;
+      display: block;
+      width: 1em;
+      font-size: 1.6rem;
+      margin-right: 0.6rem;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+## 前言
+此框架用于快速搭建基于vue的前端项目, 提供统一规格的控件并且规范了开发模式;
+#### 基础技术栈
+- vue 2.*
+- vue-cli 3.*
+- element-ui 2.*
+- scss
+
+#### 说明
+前端搭建绝大多数的系统页面结构都是"列表-详情"这样的结构;
+针对这样的业务模式, 为了使开发环节变得更顺畅质量更高, 我们对每一个环节进行了规范化并在此基础上进行了封装;
+
+#### 名词解释
+|名称|意义|说明|
+|--|--|--|
+|$|ajax组件|提供ajax交互, 并且根据当前业务规范进行了封装和统一处理|
+|dao|接口模型|通过$.get(dao),$.post(dao)的方法使用, dao的值可以是字符串地址或者json对象,如果是json对象,url代表地址,in处理入参,out处理返回值;
+|com-form|表单组件|通过配置form参数渲染表单, 通过setDatas绑定模型, 并通过getDatas获取模型|
+|con-*|控件|与com-form组合使用, 渲染表单中出现的各种组件|
+|com-btns|按钮组件|渲染按钮|
+|tmp-*|模板|通过入参控制返回一个页面|
+
+##### 模拟实现一个功能
+
+实现一个用户管理系统
+首先配置一个dao:
+
+```
+const p = 'user/'; // 根路径
+const l = p + 'l'; // 子路径, 获取列表
+const v = p + 'v'; // 子路径, 获取详情
+const s = p + 's'; // 子路径, 获取保存 通过参数ID的值决定是新增还是修改
+const d = p + 'd'; // 子路径, 删除
+export {
+  l,
+  v,
+  s,
+  d
+}
+
+```
+实现列表页:
+```
+<template>
+  <tmp-list :config="config"></tmp-list>
+</template>
+<script>
+/* global $to,$m,config,$$ */
+import tmpList from "@/tmp/list";
+import dao from "./dao";
+export default {
+  components: {
+    tmpList
+  },
+  data () {
+    const self = this;
+    return {
+      config: {
+        dataSource: dao.getList,
+        maps: { roles: $m.roles },
+        cols: [
+          {
+            viewName: "用户名称",
+            colName: "NM",
+            width: 130
+          },
+          {
+            viewName: "账户",
+            colName: "LOGIN_ACCOUNT",
+            width: 130
+          },
+          {
+            viewName: "单位",
+            colName: "UNIT",
+            width: 240
+          },
+          {
+            viewName: "角色",
+            colName: "ROLE_ID",
+            dataType: 'm--roles',
+            width: 90
+          },
+          {
+            viewName: "联系方式 ",
+            colName: "LOGIN_MOBILE",
+            width: 110
+          }
+        ],
+        searchItem: {
+          NM: {
+            txt: '用户名称'
+          },
+          ACC: {
+            txt: '账号'
+          }
+        },
+        pageBtns: {
+          add: {
+            txt: '新增',
+            click () {
+              $to('info');
+            }
+          }
+        },
+        tableBtns: {
+          edit: {
+            txt: '修改',
+            click (e) {
+              $to('info', {
+                id: e.item.row.ID
+              });
+            }
+          },
+          del: {
+            txt: '删除',
+            click (e) {
+              self.$confirm(config.delMsg).then(() => {
+                dao.del(e.item.row.ID).then(() => {
+                  $$.msg.show(config.deledMsg);
+                  e.reload();
+                }).catch(() => {
+                  // -
+                });
+              }).catch(() => {
+                e.reSelect();
+              });
+            }
+          },
+          pwd: {
+            txt: '修改密码',
+            click (e) {
+              $to('pwd', {
+                id: e.item.row.ID
+              });
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+</script>
+```
+
+
+

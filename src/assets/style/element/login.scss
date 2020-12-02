@@ -1,0 +1,313 @@
+.login-all {
+  display: flex;
+  align-items: center;
+  user-select: none;
+
+  .login-content {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+
+    .login-box {
+      width: 108rem;
+      max-width: 100vw;
+      margin: 0 auto;
+      display: flex;
+      color: $--color-white;
+
+      .login-txt {
+        flex-grow: 1000;
+        padding-right: 2.4rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: flex-start;
+
+        h1 {
+          font-size: 3.5rem;
+          display: flex;
+          align-items: flex-start;
+          margin-top: 8rem;
+          min-height: 10.7rem;
+
+          .unit {
+            display: flex;
+            align-items: center;
+            line-height: 1.2;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+
+            span {
+              position: relative;
+              white-space: nowrap;
+              line-height: 1.2;
+
+              img {
+                display: block;
+                position: absolute;
+                width: 100%;
+              }
+            }
+
+            img {
+              max-height: 1.4em;
+              margin: 0 2.5rem 0 0;
+            }
+          }
+
+          .title {
+            font-size: 3.6rem;
+            // font-weight: 400;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.2;
+
+            &::before {
+              content: "";
+              display: block;
+              height: 1em;
+              width: 0.1rem;
+              background-color: hsla(0, 0%, 100%, 0.4);
+              margin: 0.4rem 2.4rem 0;
+              flex-shrink: 0;
+            }
+          }
+        }
+
+        h2 {
+          font-size: 3.6rem;
+          font-weight: 400;
+          line-height: 2;
+
+          span {
+            padding-left: 4em;
+            display: block;
+
+            span {
+              padding-top: 2.4rem;
+            }
+          }
+        }
+      }
+
+      .login-dlg {
+        background-color: rgba(0, 0, 0, 0.3);
+        flex-shrink: 0;
+        padding: 3rem 5rem;
+        max-width: 100vw;
+
+        h3 {
+          font-size: 2.4rem;
+          padding: 0 0 0.6rem 0;
+          line-height: 1;
+          margin: 0;
+        }
+
+        h4 {
+          font-size: 1.2rem;
+          line-height: 1;
+          color: rgba(255, 255, 255, 0.4);
+          padding: 0;
+          margin: 0 0 2rem 0;
+        }
+
+        &.el-form {
+          .el-form-item {
+            margin: 0;
+
+            &.item {
+              height: 6rem;
+              min-height: 56px;
+            }
+
+            &.fgt {
+              .el-form-item__content {
+                display: flex;
+                line-height: 1;
+                .forget_mm {
+                  display: none;
+                }
+              }
+            }
+
+            .el-input {
+              .el-input__inner {
+                padding-left: 6rem;
+              }
+
+              .el-input__prefix {
+                padding: 0 1rem 0 1rem;
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                  display: block;
+                  width: 0.2rem;
+                  background-color: $--color-text-placeholder;
+                  border-radius: 50%;
+                  right: 0;
+                  top: 10%;
+                  height: 80%;
+                }
+              }
+            }
+
+            .el-checkbox {
+              &.is-checked {
+                .el-checkbox__input {
+                  &.is-checked {
+                    .el-checkbox__inner {
+                      background-color: #426ded;
+                      border-color: #426ded;
+                    }
+                  }
+                }
+              }
+            }
+
+            .el-checkbox__label {
+              color: $--color-white;
+            }
+
+            .el-button {
+              margin-top: 6rem;
+              font-size: 1.8rem;
+              font-weight: 400;
+              height: 5rem;
+              line-height: 5rem;
+              padding: 0;
+              width: 100%;
+
+              &.el-button--primary {
+                background-color: #426ded;
+                border-color: #426ded;
+
+                &:hover,
+                &:focus {
+                  background-color: #688af1;
+                  border-color: #688af1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.qnlm {
+      background-color: rgba(0, 0, 0, 0);
+
+      .login-box {
+        flex-direction: column;
+        width: 50rem;
+
+        .login-txt {
+          padding: 0;
+
+          h1 {
+            padding: 0;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            min-height: 20.5rem;
+
+            .unit {
+              display: block;
+
+              img {
+                display: block;
+                margin: 0 auto;
+                height: 10rem;
+                max-height: 10rem;
+                width: auto;
+              }
+
+              span {
+                font-size: 2.6rem;
+                position: relative;
+
+                img {
+                  width: 100%;
+                  height: auto;
+                  position: absolute;
+                }
+              }
+            }
+
+            .title {
+              font-size: 3rem;
+              display: block;
+              text-align: center;
+              padding: 2.4rem 0 2rem;
+              font-weight: bold;
+
+              &::before {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .login-dlg {
+          background-color: rgba(255, 255, 255, 0.1);
+          padding: 2rem;
+          width: 36rem;
+          box-sizing: content-box;
+          overflow: hidden;
+          margin: 0 auto;
+
+          &.el-form {
+            .el-form-item {
+              &.fgt {
+                .el-form-item__content {
+                  .forget_mm {
+                    display: block !important;
+                    text-align: right;
+                    cursor: pointer;
+                    line-height: 1;
+                    text-decoration: underline;
+                  }
+                }
+              }
+              .el-form-item__content {
+                > * {
+                  width: 36rem;
+                }
+              }
+
+              .el-input__prefix {
+                .el-input__icon {
+                  color: $--color-white;
+                  font-size: 18px !important;
+                }
+
+                &::after {
+                  background-color: $--color-white;
+                }
+              }
+
+              .el-input {
+                ::placeholder {
+                  color: #fff;
+                }
+
+                .el-input__inner {
+                  background-color: rgba(255, 255, 255, 0.5);
+                  color: $--color-white;
+                }
+              }
+
+              &.dlg-tit {
+                display: none;
+              }
+
+              .el-button {
+                margin-top: 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

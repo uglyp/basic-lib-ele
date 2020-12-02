@@ -1,0 +1,89 @@
+@keyframes load {
+  0% {
+    background-color: $--color-primary;
+    opacity: 1;
+  }
+
+  100% {
+    background-color: $--color-primary;
+    opacity: 0.2;
+  }
+}
+
+.loading-page {
+  margin: 0 auto;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: $--background-color-base;
+
+  div {
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+
+    span {
+      display: inline-block;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      background-color: $--color-primary;
+      position: absolute;
+      animation: load 1.04s ease infinite;
+
+      &:nth-child(1) {
+        left: 0;
+        top: 50%;
+        margin-top: -0.8rem;
+        animation-delay: 0.13s;
+      }
+
+      &:nth-child(2) {
+        left: 1.4rem;
+        top: 1.4rem;
+        animation-delay: 0.26s;
+      }
+
+      &:nth-child(3) {
+        left: 50%;
+        top: 0;
+        margin-left: -0.8rem;
+        animation-delay: 0.39s;
+      }
+
+      &:nth-child(4) {
+        top: 1.4rem;
+        right: 1.4rem;
+        animation-delay: 0.52s;
+      }
+
+      &:nth-child(5) {
+        right: 0;
+        top: 50%;
+        margin-top: -0.8rem;
+        animation-delay: 0.65s;
+      }
+
+      &:nth-child(6) {
+        right: 1.4rem;
+        bottom: 1.4rem;
+        animation-delay: 0.78s;
+      }
+
+      &:nth-child(7) {
+        bottom: 0;
+        left: 50%;
+        margin-left: -0.8rem;
+        animation-delay: 0.91s;
+      }
+
+      &:nth-child(8) {
+        bottom: 1.4rem;
+        left: 1.4rem;
+        animation-delay: 1.04s;
+      }
+    }
+  }
+}

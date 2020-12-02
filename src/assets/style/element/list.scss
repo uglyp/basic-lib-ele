@@ -1,0 +1,161 @@
+// 列表页统一样式
+.list-page {
+  display: flex;
+  // flex-direction: column;
+  padding: 1rem;
+  max-height: 100%;
+  overflow: hidden;
+
+  .settings {
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.4s;
+    max-height: 46vh;
+    overflow: hidden;
+    height: 3.9rem !important;
+
+    &.open {
+      overflow-y: auto;
+      height: auto !important;
+    }
+
+    .other {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    .search-form {
+      margin-bottom: 0;
+      display: flex;
+      flex-wrap: wrap;
+
+      .el-form-item {
+        width: auto;
+
+        &.last-item {
+          .el-form-item__content {
+            width: auto;
+
+            > * {
+              width: auto;
+            }
+          }
+        }
+
+        .el-form-item__label {
+          font-size: 1.2rem;
+          white-space: normal;
+          flex-shrink: 0;
+          width: auto !important;
+        }
+
+        .el-form-item__content {
+          min-width: 20rem;
+          flex-grow: 1000;
+          flex-shrink: 1;
+
+          .right-parent {
+            .bottom-parent {
+              > * {
+                width: 20rem;
+              }
+            }
+          }
+
+          // .control {
+          //   width: 100%;
+          // }
+        }
+      }
+    }
+  }
+
+  .list-table {
+    padding: 0;
+    flex-grow: 1000;
+    display: flex;
+    overflow: hidden;
+
+    .table-all {
+      display: flex;
+      flex-grow: 1000;
+
+      .table-main {
+        display: flex;
+        padding: 0;
+        flex-grow: 1000;
+        border: none;
+
+        .el-table__header-wrapper {
+          flex-shrink: 0;
+        }
+
+        .el-table__body-wrapper {
+          overflow-y: auto;
+        }
+      }
+
+      .table-footer {
+        padding: 0;
+        user-select: none;
+        //解决页数选择器显示不全
+        height: 3.5rem !important;
+
+        .el-page {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          // padding: 0.5rem 0 0;
+
+          .el-pagination__total {
+            font-size: 1.2rem;
+          }
+
+          .el-pagination__sizes {
+            font-size: 1.2rem;
+
+            .el-input {
+              font-size: 1.2rem;
+            }
+          }
+
+          .el-pagination__jump {
+            font-size: 1.2rem;
+
+            .el-input {
+              font-size: 1.2rem;
+            }
+          }
+
+          .btn-prev,
+          .btn-next {
+            font-size: 1.2rem;
+            background-size: 1.2rem;
+
+            .el-icon {
+              font-size: 1.2rem;
+            }
+          }
+
+          .el-pager {
+            li {
+              font-size: 1.2rem;
+              min-width: 3rem;
+              padding: 0 0.4rem;
+              height: 2.8rem;
+              line-height: 2.8rem;
+
+              &.more {
+                &::before {
+                  line-height: 2.8rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

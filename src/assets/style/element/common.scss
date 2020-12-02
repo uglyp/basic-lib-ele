@@ -1,0 +1,112 @@
+// 滚动条
+::-webkit-scrollbar {
+  /*整体*/
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  /*滑块*/
+  background: #e6e6e6;
+  border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+  /*轨道*/
+  border-radius: 0.25rem;
+  background: #f2f2f2;
+}
+
+// ----------------------------------
+::placeholder {
+  font-size: 1.2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  line-height: 1;
+}
+
+// 组件对齐处理
+.flex {
+  display: flex !important;
+  overflow: hidden;
+
+  >* {
+    &+* {
+      margin-left: 1rem;
+    }
+  }
+
+  &.column {
+    flex-direction: column !important;
+
+    >* {
+      &+* {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .f,
+  .full {
+    width: 100%;
+  }
+
+  .b,
+  .big,
+  .r2-3 {
+    width: 70%;
+    flex-grow: 1000;
+  }
+
+  .s,
+  .small,
+  .r1-3 {
+    width: 33.33333333%;
+  }
+
+  .h,
+  .half,
+  .r1-2 {
+    width: 48%;
+    flex-grow: 1000;
+  }
+
+  .r1-4 {
+    width: 25%;
+  }
+}
+
+// 对齐方式
+.f-c-g {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1000;
+  overflow: auto;
+  padding: 0;
+
+  &.el-main {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.el-loading-mask {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+// 红字
+.red {
+  color: #ff7676;
+}
+
+// 绿字
+.green {
+  color: #3dcc40;
+}

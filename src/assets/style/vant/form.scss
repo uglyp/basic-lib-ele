@@ -1,0 +1,136 @@
+.qh-form {
+  .van-cell {
+    display: flex;
+
+    &.van-field--error {
+      * {
+        &::placeholder {
+          color: #f00 !important;
+        }
+      }
+    }
+
+    .van-cell {
+      padding: 0;
+
+    }
+
+    .van-field__label {
+      display: flex;
+      align-items: center;
+
+      span {
+        word-break: break-all;
+      }
+    }
+
+
+    .van-field__value {
+      overflow: hidden;
+      // height: 100%;
+
+      .van-field__body {
+        height: 100%;
+
+        .van-field__control {
+          padding: 0;
+          height: 100%;
+
+          >* {
+            width: 100%;
+          }
+
+          .qh-select,
+          .select-box {
+            .van-field__right-icon {
+              margin: 0;
+            }
+          }
+
+          .van-uploader {
+            .van-uploader__input-wrapper {
+              width: 100%;
+              display: flex;
+              align-items: center;
+
+              .van-button {
+                padding: 0 .7rem;
+                border-radius: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .other {
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+.select-prop {
+  padding: 0 1rem;
+
+  .van-checkbox {
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #F5F4F9;
+
+    .van-checkbox__icon {
+      order: 2;
+    }
+
+    .van-checkbox__label {
+      order: 1;
+      font-size: 1.6rem;
+    }
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    align-items: center;
+    height: 4rem;
+    background-color: #fbfaff;
+    padding: 0 1rem;
+
+    strong {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #333;
+    }
+
+    .cancel {
+      color: #999;
+    }
+
+    .submit {
+      color: #3396fb;
+    }
+  }
+
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  &.is-disabled {
+    color: #999
+  }
+
+  .txt {
+    flex-grow: 1000;
+  }
+
+  .van-icon-arrow-down {
+    flex-shrink: 0;
+    padding: 0 1rem;
+  }
+}

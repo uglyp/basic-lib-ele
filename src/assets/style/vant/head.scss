@@ -1,0 +1,12 @@
+.bg {
+  .head {
+    // height: 5rem !important;
+    flex-shrink: 0;
+
+    .van-nav-bar {
+      height: 5rem;
+      padding: 0;
+      line-height: 1.2;
+    }
+  }
+}

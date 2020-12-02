@@ -1,0 +1,29 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "vue-eslint-parser",
+  "plugins": [
+    "vue"
+  ],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "globals": {
+    "$$": true,
+    "$c": true,
+    "$r": true,
+    "$app": true,
+    "window": true,
+    "document": true,
+    "Symbol": true,
+    "module": true,
+    "Promise": true,
+    "setTimeout": true,
+    "sessionStorage": true
+  },
+  "rules": {
+    "no-undef": 1,
+    "no-unused-vars": 1
+  }
+}

@@ -1,0 +1,1 @@
+<template><h1>info2</h1></template>
